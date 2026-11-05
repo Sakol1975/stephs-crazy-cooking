@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>Things are Cooking... | Steph's Crazy Cooking</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#080808}
+body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
+.hero{position:relative;width:100%;max-width:1920px;margin:0 auto;line-height:0}
+.hero img{display:block;width:100%;height:auto}
+.nav-hit{position:absolute;top:0;height:7.5%;display:block;background:transparent;outline-offset:-3px;z-index:4}
+.home{left:9.5%;width:12%}
+.recipes{left:22%;width:13%}
+.slow{left:35.5%;width:14%}
+.bbq{left:49.5%;width:9%}
+.tips{left:59%;width:16%}
+.about{left:75.5%;width:15%}
+.search{left:91%;width:7%}
+.nav-hit:focus-visible{outline:2px solid #ff7417}
+
+/* Hide the baked-in orange Home brush on this page, then paint only
+   the currently selected menu item in the same orange style. */
+.home-brush-mask{position:absolute;left:9.5%;top:0.5%;width:12%;height:6.5%;
+ background:#080808;z-index:2;pointer-events:none}
+.active-brush{position:absolute;top:0.5%;height:6.5%;z-index:3;pointer-events:none;
+ background:linear-gradient(176deg,transparent 0 5%,#f47716 8% 85%,transparent 91%),
+            linear-gradient(2deg,transparent 0 8%,#f47716 14% 88%,transparent 94%);
+ clip-path:polygon(5% 12%,18% 5%,92% 8%,98% 20%,94% 82%,84% 94%,10% 88%,1% 70%,3% 25%);
+ filter:drop-shadow(0 0 8px #f47716)}
+.active-home{left:9.5%;width:12%}
+.active-recipes{left:22%;width:13%}
+.active-slow{left:35.5%;width:14%}
+.active-bbq{left:49.5%;width:9%}
+.active-tips{left:59%;width:16%}
+.active-about{left:75.5%;width:15%}
+.active-search{left:91%;width:7%}
+.message{position:absolute;left:8%;right:8%;top:73%;z-index:2;text-align:center;
+ line-height:1.12;text-shadow:0 3px 10px #000,0 0 18px #000}
+.message h1{margin:0;color:#ff7417;font-size:clamp(25px,5.2vw,78px);font-style:italic;
+ font-weight:bold;text-shadow:0 2px 3px #000,0 0 16px #f47716}
+.message p{margin:8px 0 0;color:#f7eee5;font-size:clamp(18px,3.5vw,52px);
+ font-style:italic;font-weight:bold}
+@media(max-width:600px){
+ .message{top:72%}
+ .nav-hit{height:8%}
+ .home-brush-mask,.active-brush{height:7%}
+}
+</style>
+</head>
+<body>
+<main class="hero" aria-label="Steph's Crazy Cooking – binnenkort beschikbaar">
+<img src="assets/homepage-master-zonder-intro.png" alt="Dezelfde vurige achtergrond van Steph's Crazy Cooking">
+<div class="home-brush-mask" aria-hidden="true"></div>
+<div id="activeBrush" class="active-brush active-recipes" aria-hidden="true"></div>
+<div class="message">
+<h1>Things are Cooking...</h1>
+<p>Come back soon.</p>
+</div>
+<a class="nav-hit home" href="./index.html" aria-label="Home"></a>
+<a class="nav-hit recipes" href="./coming-soon.html?section=recepten" aria-label="Recepten"></a>
+<a class="nav-hit slow" href="./coming-soon.html?section=slowcooker" aria-label="Slowcooker"></a>
+<a class="nav-hit bbq" href="./coming-soon.html?section=bbq" aria-label="BBQ"></a>
+<a class="nav-hit tips" href="./coming-soon.html?section=tips" aria-label="Tips en Tricks"></a>
+<a class="nav-hit about" href="./coming-soon.html?section=over-stephan" aria-label="Over Stephan"></a>
+<a class="nav-hit search" href="./coming-soon.html?section=zoeken" aria-label="Zoeken"></a>
+</main>
+<script>
+(function(){
+ const section = new URLSearchParams(window.location.search).get('section') || 'recepten';
+ const classes = {
+   'recepten':'active-recipes',
+   'slowcooker':'active-slow',
+   'bbq':'active-bbq',
+   'tips':'active-tips',
+   'over-stephan':'active-about',
+   'zoeken':'active-search'
+ };
+ const brush = document.getElementById('activeBrush');
+ brush.className = 'active-brush ' + (classes[section] || 'active-recipes');
+})();
+</script>
+</body>
+</html>
