@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steph's Crazy Cooking</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: #f7eee5;
+  font-family: Georgia, serif;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1670px;
+  margin: auto;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  height: 7.5%;
+  display: block;
+}
+
+.home { left: 9%; width: 12%; }
+.recepten { left: 22%; width: 13%; }
+.slowcooker { left: 36%; width: 13%; }
+.bbq { left: 50%; width: 9%; }
+.tips { left: 60%; width: 15%; }
+.over { left: 76%; width: 15%; }
+.zoeken { left: 92%; width: 7%; }
+
+.nav:focus-visible {
+  outline: 2px solid orange;
+}
+
+.content {
+  text-align: center;
+  padding: 35px 20px 60px;
+}
+
+h1 {
+  color: #ff7417;
+  font-size: clamp(26px, 4vw, 44px);
+  margin-bottom: 10px;
+}
+
+p {
+  color: #e0d0c0;
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 25px;
+  background: #f36d16;
+  color: #160b05;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <img src="assets/homepage-master-zonder-intro.png"
+       alt="Steph's Crazy Cooking">
+
+  <a class="nav home" href="index.html" aria-label="Home"></a>
+  <a class="nav recepten" href="recepten.html" aria-label="Recepten"></a>
+  <a class="nav slowcooker" href="recepten.html" aria-label="Slowcooker"></a>
+  <a class="nav bbq" href="recepten.html" aria-label="BBQ"></a>
+  <a class="nav tips" href="recepten.html" aria-label="Tips en Tricks"></a>
+  <a class="nav over" href="#over" aria-label="Over Stephan"></a>
+  <a class="nav zoeken" href="recepten.html" aria-label="Zoeken"></a>
+</header>
+
+<section class="content" id="over">
+  <h1>Steph's Crazy Cooking</h1>
+  <p>Koken op gevoel · Recepten met karakter</p>
+  <a class="button" href="recepten.html">Bekijk de recepten</a>
+</section>
+
+</body>
+</html>
