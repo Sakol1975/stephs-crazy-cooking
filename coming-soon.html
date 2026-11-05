@@ -10,8 +10,8 @@
 html,body{margin:0;min-height:100%;background:#080808}
 body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
 .hero{position:relative;width:100%;max-width:1920px;margin:0 auto;line-height:0}
-.hero> .background{display:block;width:100%;height:auto}
-.nav-hit{position:absolute;top:0;height:7.5%;display:block;background:transparent;outline-offset:-3px;z-index:6}
+.hero img{display:block;width:100%;height:auto}
+.nav-hit{position:absolute;top:0;height:7.5%;display:block;background:transparent;outline-offset:-3px;z-index:4}
 .home{left:9.5%;width:12%}
 .recipes{left:22%;width:13%}
 .slow{left:35.5%;width:14%}
@@ -20,24 +20,59 @@ body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
 .about{left:75.5%;width:15%}
 .search{left:91%;width:7%}
 .nav-hit:focus-visible{outline:2px solid #ff7417}
-/* De actieve menutekst uit de achtergrond wordt tijdelijk afgedekt. */
-.active-mask{position:absolute;top:.5%;height:6.5%;z-index:2;background:#080808;pointer-events:none}
-/* Exacte brush-crop uit de originele afbeelding; de bronafbeelding blijft onaangeraakt. */
-.active-brush{position:absolute;top:.5%;height:6.5%;z-index:3;object-fit:fill;pointer-events:none}
-.active-label{position:absolute;top:1.1%;height:5.5%;z-index:4;display:flex;align-items:center;justify-content:center;pointer-events:none;color:#f7eee5;font-family:Georgia,'Times New Roman',serif;font-size:clamp(10px,1.8vw,27px);font-style:italic;font-weight:bold;text-shadow:0 1px 3px #000,0 0 5px #000;white-space:nowrap}
-.message{position:absolute;left:8%;right:8%;top:73%;z-index:2;text-align:center;line-height:1.12;text-shadow:0 3px 10px #000,0 0 18px #000}
-.message h1{margin:0;color:#ff7417;font-size:clamp(25px,5.2vw,78px);font-style:italic;font-weight:bold;text-shadow:0 2px 3px #000,0 0 16px #f47716}
-.message p{margin:8px 0 0;color:#f7eee5;font-size:clamp(18px,3.5vw,52px);font-style:italic;font-weight:bold}
-@media(max-width:600px){.message{top:72%}.nav-hit{height:8%}.active-mask,.active-brush{height:7%}}
+
+/* Hide the baked-in orange Home brush on this page, then paint only
+   the currently selected menu item in the same orange style. */
+.home-brush-mask{position:absolute;left:9.5%;top:0.5%;width:12%;height:6.5%;
+ background:#080808;z-index:2;pointer-events:none}
+.active-brush{position:absolute;top:0.5%;height:6.5%;z-index:3;pointer-events:none;
+ background:linear-gradient(176deg,transparent 0 5%,#f47716 8% 85%,transparent 91%),
+            linear-gradient(2deg,transparent 0 8%,#f47716 14% 88%,transparent 94%);
+ clip-path:polygon(5% 12%,18% 5%,92% 8%,98% 20%,94% 82%,84% 94%,10% 88%,1% 70%,3% 25%);
+ filter:drop-shadow(0 0 8px #f47716)}
+.active-home{left:9.5%;width:12%}
+.active-recipes{left:22%;width:13%}
+.active-slow{left:35.5%;width:14%}
+.active-bbq{left:49.5%;width:9%}
+.active-tips{left:59%;width:16%}
+.active-about{left:75.5%;width:15%}
+.active-search{left:91%;width:7%}
+
+/* Keep the menu labels readable above the orange selection brush.
+   Home is recreated because its original baked-in orange brush is masked here. */
+.nav-label{
+ position:absolute;top:1.1%;height:5.5%;z-index:5;display:flex;
+ align-items:center;justify-content:center;pointer-events:none;
+ color:#f7eee5;font-family:Georgia,'Times New Roman',serif;
+ font-size:clamp(10px,1.8vw,27px);font-style:italic;font-weight:bold;
+ text-shadow:0 1px 3px #000,0 0 5px #000;white-space:nowrap
+}
+.label-home{left:9.5%;width:12%}
+.label-active{display:flex}
+.message{position:absolute;left:8%;right:8%;top:73%;z-index:2;text-align:center;
+ line-height:1.12;text-shadow:0 3px 10px #000,0 0 18px #000}
+.message h1{margin:0;color:#ff7417;font-size:clamp(25px,5.2vw,78px);font-style:italic;
+ font-weight:bold;text-shadow:0 2px 3px #000,0 0 16px #f47716}
+.message p{margin:8px 0 0;color:#f7eee5;font-size:clamp(18px,3.5vw,52px);
+ font-style:italic;font-weight:bold}
+@media(max-width:600px){
+ .message{top:72%}
+ .nav-hit{height:8%}
+ .home-brush-mask,.active-brush{height:7%}
+}
 </style>
 </head>
 <body>
 <main class="hero" aria-label="Steph's Crazy Cooking – binnenkort beschikbaar">
-<img class="background" src="assets/homepage-master-zonder-intro.png" alt="Steph's Crazy Cooking">
-<div id="activeMask" class="active-mask" aria-hidden="true"></div>
-<img id="activeBrush" class="active-brush" src="assets/home-brush.png" alt="" aria-hidden="true">
-<span id="activeLabel" class="active-label"></span>
-<div class="message"><h1>Things are Cooking...</h1><p>Come back soon.</p></div>
+<img src="assets/homepage-master-zonder-intro.png" alt="Dezelfde vurige achtergrond van Steph's Crazy Cooking">
+<div class="home-brush-mask" aria-hidden="true"></div>
+<div id="activeBrush" class="active-brush active-recipes" aria-hidden="true"></div>
+<span class="nav-label label-home">Home</span>
+<span id="activeLabel" class="nav-label label-active"></span>
+<div class="message">
+<h1>Things are Cooking...</h1>
+<p>Come back soon.</p>
+</div>
 <a class="nav-hit home" href="./index.html" aria-label="Home"></a>
 <a class="nav-hit recipes" href="./coming-soon.html?section=recepten" aria-label="Recepten"></a>
 <a class="nav-hit slow" href="./coming-soon.html?section=slowcooker" aria-label="Slowcooker"></a>
@@ -48,25 +83,39 @@ body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
 </main>
 <script>
 (function(){
- const section=new URLSearchParams(window.location.search).get('section')||'home';
- const positions={
-  home:['9.5%','12%','Home'],
-  recepten:['22%','13%','Recepten'],
-  slowcooker:['35.5%','14%','Slowcooker'],
-  bbq:['49.5%','9%','BBQ'],
-  tips:['59%','16%','Tips & Tricks'],
-  'over-stephan':['75.5%','15%','Over Stephan'],
-  zoeken:['91%','7%','']
+ const section = new URLSearchParams(window.location.search).get('section') || 'recepten';
+ const classes = {
+   'recepten':'active-recipes',
+   'slowcooker':'active-slow',
+   'bbq':'active-bbq',
+   'tips':'active-tips',
+   'over-stephan':'active-about',
+   'zoeken':'active-search'
  };
- const active=positions[section]||positions.home;
- const mask=document.getElementById('activeMask');
- const brush=document.getElementById('activeBrush');
- const label=document.getElementById('activeLabel');
- mask.style.left=active[0]; mask.style.width=active[1];
- brush.style.left=active[0]; brush.style.width=active[1];
- label.style.left=active[0]; label.style.width=active[1];
- label.textContent=active[2];
- if(section==='zoeken') label.style.display='none';
+ const brush = document.getElementById('activeBrush');
+ const label = document.getElementById('activeLabel');
+ const labels = {
+   'recepten':'Recepten',
+   'slowcooker':'Slowcooker',
+   'bbq':'BBQ',
+   'tips':'Tips & Tricks',
+   'over-stephan':'Over Stephan',
+   'zoeken':'Zoeken'
+ };
+ const positions = {
+   'recepten':['22%','13%'],
+   'slowcooker':['35.5%','14%'],
+   'bbq':['49.5%','9%'],
+   'tips':['59%','16%'],
+   'over-stephan':['75.5%','15%'],
+   'zoeken':['91%','7%']
+ };
+ brush.className = 'active-brush ' + (classes[section] || 'active-recipes');
+ label.textContent = labels[section] || 'Recepten';
+ const pos = positions[section] || positions['recepten'];
+ label.style.left = pos[0];
+ label.style.width = pos[1];
+ label.classList.remove('label-active');
 })();
 </script>
 </body>
