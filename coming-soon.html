@@ -37,6 +37,18 @@ body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
 .active-tips{left:59%;width:16%}
 .active-about{left:75.5%;width:15%}
 .active-search{left:91%;width:7%}
+
+/* Keep the menu labels readable above the orange selection brush.
+   Home is recreated because its original baked-in orange brush is masked here. */
+.nav-label{
+ position:absolute;top:1.1%;height:5.5%;z-index:5;display:flex;
+ align-items:center;justify-content:center;pointer-events:none;
+ color:#f7eee5;font-family:Georgia,'Times New Roman',serif;
+ font-size:clamp(10px,1.8vw,27px);font-style:italic;font-weight:bold;
+ text-shadow:0 1px 3px #000,0 0 5px #000;white-space:nowrap
+}
+.label-home{left:9.5%;width:12%}
+.label-active{display:flex}
 .message{position:absolute;left:8%;right:8%;top:73%;z-index:2;text-align:center;
  line-height:1.12;text-shadow:0 3px 10px #000,0 0 18px #000}
 .message h1{margin:0;color:#ff7417;font-size:clamp(25px,5.2vw,78px);font-style:italic;
@@ -55,6 +67,8 @@ body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
 <img src="assets/homepage-master-zonder-intro.png" alt="Dezelfde vurige achtergrond van Steph's Crazy Cooking">
 <div class="home-brush-mask" aria-hidden="true"></div>
 <div id="activeBrush" class="active-brush active-recipes" aria-hidden="true"></div>
+<span class="nav-label label-home">Home</span>
+<span id="activeLabel" class="nav-label label-active"></span>
 <div class="message">
 <h1>Things are Cooking...</h1>
 <p>Come back soon.</p>
@@ -79,7 +93,29 @@ body{font-family:Georgia,'Times New Roman',serif;color:#f7eee5}
    'zoeken':'active-search'
  };
  const brush = document.getElementById('activeBrush');
+ const label = document.getElementById('activeLabel');
+ const labels = {
+   'recepten':'Recepten',
+   'slowcooker':'Slowcooker',
+   'bbq':'BBQ',
+   'tips':'Tips & Tricks',
+   'over-stephan':'Over Stephan',
+   'zoeken':'Zoeken'
+ };
+ const positions = {
+   'recepten':['22%','13%'],
+   'slowcooker':['35.5%','14%'],
+   'bbq':['49.5%','9%'],
+   'tips':['59%','16%'],
+   'over-stephan':['75.5%','15%'],
+   'zoeken':['91%','7%']
+ };
  brush.className = 'active-brush ' + (classes[section] || 'active-recipes');
+ label.textContent = labels[section] || 'Recepten';
+ const pos = positions[section] || positions['recepten'];
+ label.style.left = pos[0];
+ label.style.width = pos[1];
+ label.classList.remove('label-active');
 })();
 </script>
 </body>
