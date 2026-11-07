@@ -1,0 +1,95 @@
+/* Steph’s Crazy Cooking — kale basislayout */
+:root {
+  color-scheme: dark;
+  --cream: #fff0d8;
+  --gold: #ffbd62;
+}
+* { box-sizing: border-box; }
+html {
+  min-height: 100%;
+  margin: 0;
+  background: #090605;
+  scrollbar-gutter: stable;
+}
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  color: var(--cream);
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #090605;
+  background-image: url("../assets/site-background.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.site {
+  width: min(100%, 1500px);
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: 0 clamp(12px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+}
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(20px, 4vh, 42px) 0 0;
+}
+.brand-placeholder {
+  position: relative;
+  width: 100%;
+  min-height: clamp(110px, 18vh, 190px);
+}
+.corner-logo {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: clamp(58px, 10vw, 145px);
+  height: auto;
+  max-height: 17vh;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, .75));
+}
+.corner-logo-left { left: 0; }
+.corner-logo-right { right: 0; }
+.main-nav {
+  width: min(100%, 1000px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: clamp(6px, 2.2vw, 28px);
+  padding: 14px 4px;
+}
+.main-nav a {
+  color: var(--gold);
+  font-size: clamp(.72rem, 1.65vw, 1.35rem);
+  white-space: nowrap;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 0 2px 10px #000, 0 0 12px rgba(0,0,0,.9);
+}
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  outline: none;
+}
+.main-nav a[aria-current="page"] {
+  color: var(--cream);
+}
+.page-content {
+  flex: 1;
+  min-height: 30vh;
+}
+@media (max-width: 600px) {
+  .brand-placeholder { min-height: clamp(82px, 15vh, 120px); }
+  .corner-logo { width: clamp(48px, 15vw, 78px); max-height: 13vh; }
+  .main-nav { gap: clamp(6px, 2.2vw, 12px); padding: 10px 0 14px; }
+}
