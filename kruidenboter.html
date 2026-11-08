@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Het simpele kruidenboterrecept van Steph's Crazy Cooking.">
+  <title>Kruidenboter | Steph's Crazy Cooking</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: #080808; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #f7eee5;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        linear-gradient(rgba(8, 6, 5, .70), rgba(8, 6, 5, .82)),
+        url("./assets/site-background.png") center center / cover fixed no-repeat,
+        #080808;
+    }
+    .page { width: min(1120px, 92%); margin: 0 auto; padding: 34px 0 42px; }
+    h1 {
+      margin: 0 0 12px;
+      color: #ff7417;
+      text-align: center;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      font-style: italic;
+      text-shadow: 0 2px 5px #000, 0 0 18px #a9420b;
+    }
+    .rule { width: min(360px, 60%); height: 3px; margin: 20px auto 34px; background: #a95a2c; }
+    .layout { display: grid; grid-template-columns: 1fr 1.08fr; gap: 24px; align-items: start; }
+    section {
+      padding: clamp(22px, 3vw, 34px);
+      border: 1px solid rgba(255, 138, 54, .42);
+      border-radius: 18px;
+      background: rgba(18, 15, 13, .88);
+      box-shadow: 0 12px 34px rgba(0,0,0,.35);
+    }
+    h2 { margin: 0 0 24px; color: #ff9a50; font-size: clamp(1.35rem, 2.7vw, 1.8rem); letter-spacing: .04em; }
+    .ingredient { margin: 0 0 23px; }
+    .ingredient:last-child { margin-bottom: 0; }
+    h3 { margin: 0 0 7px; color: #fff2df; font-size: 1.12rem; }
+    p { margin: 0; color: #e5d6c5; font-size: 1.04rem; line-height: 1.62; }
+    ol { list-style: none; counter-reset: step; margin: 0; padding: 0; }
+    ol li {
+      counter-increment: step;
+      position: relative;
+      min-height: 44px;
+      margin: 0 0 22px;
+      padding: 2px 0 0 58px;
+      color: #f7eee5;
+      font-size: 1.08rem;
+      line-height: 1.6;
+    }
+    ol li:last-child { margin-bottom: 0; }
+    ol li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 0;
+      display: grid; place-items: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      color: #21150e; background: #f58236;
+      font: bold 1.1rem Arial, sans-serif;
+    }
+    .notes { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .note {
+      padding: 20px 22px;
+      border-left: 4px solid #f58236;
+      border-radius: 10px;
+      background: rgba(30, 23, 18, .9);
+    }
+    .note h2 { margin-bottom: 8px; font-size: 1.12rem; }
+    .note p { font-size: 1rem; }
+    @media (max-width: 760px) {
+      .page { padding-top: 26px; }
+      .layout { grid-template-columns: 1fr; }
+      .notes { grid-template-columns: 1fr; }
+      body { background-attachment: scroll; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Kruidenboter</h1>
+    <div class="rule" aria-hidden="true"></div>
+
+    <div class="layout">
+      <section aria-labelledby="ingredienten">
+        <h2 id="ingredienten">Ingrediënten</h2>
+
+        <div class="ingredient">
+          <h3>Gezouten roomboter</h3>
+          <p>Gewoon lekker de goedkope. Dure mag ook, maar dat moet je lekker zelf weten.</p>
+        </div>
+
+        <div class="ingredient">
+          <h3>Een paar teentjes knoflook</h3>
+          <p>Hoeveel? Dat kies je zelf. Ik doe er ongeveer 5 op 1 pak roomboter. Net als met voeten: de ene teen is de andere niet!</p>
+        </div>
+
+        <div class="ingredient">
+          <h3>Kippenbouillonblokje</h3>
+          <p>Lekker zoutig: ¾ blokje. Minder zoutig: ½ blokje.</p>
+        </div>
+
+        <div class="ingredient">
+          <h3>Sambal</h3>
+          <p>Pittig: 1 eetlepel. Gewoon lekker aanwezig: 1 theelepel.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="bereiding">
+        <h2 id="bereiding">Bereidingswijze</h2>
+        <ol>
+          <li>Laat de roomboter lekker zacht worden.</li>
+          <li>Doe de boter in een kom, bak, diep bord of iets dergelijks.</li>
+          <li>Voeg de rest van de ingrediënten toe. Je snapt zelf wel dat je alles moet snijden, hakken en verkruimelen toch?</li>
+          <li>Meng alles goed door elkaar. Ik doe dit met een vork.</li>
+          <li>Alles gemengd? Even proeven en verder op smaak brengen. Mijn smaak is die van jou niet, dus…</li>
+        </ol>
+      </section>
+    </div>
+
+    <div class="notes">
+      <section class="note">
+        <h2>Heerlijk erbij</h2>
+        <p>Heerlijk op een stokbroodje.</p>
+      </section>
+      <section class="note">
+        <h2>Ook een aanrader</h2>
+        <p>Super om bijvoorbeeld een deel toe te voegen aan grote knoflookolie-garnalen.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
