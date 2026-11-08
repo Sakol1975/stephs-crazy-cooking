@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090605">
+  <meta name="description" content="Hier ben ik — Steph van Steph’s Crazy Cooking.">
+  <title>Hier ben ik | Steph’s Crazy Cooking</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    /* Alleen de portretweergave is specifiek voor deze pagina. */
+    .portrait-stage {
+      flex: 1;
+      min-height: min(78vh, 900px);
+      min-height: min(78dvh, 900px);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: clamp(8px, 2vh, 22px) 0;
+    }
+    .portrait-stage img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: min(92vw, 850px);
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, .55));
+    }
+    @media (max-width: 600px) {
+      .portrait-stage {
+        min-height: 68vh;
+        min-height: 68dvh;
+        padding: 4px 0 12px;
+      }
+      .portrait-stage img {
+        max-width: 96vw;
+        max-height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="brand-row" aria-label="Steph’s Crazy Cooking">
+        <img class="corner-logo corner-logo-left" src="./assets/logo-vlammende-koksmuts.png" alt="Vlammende koksmuts met gekruiste messen">
+        <img class="center-logo" src="./assets/logo-stephs-crazy-cooking.png" alt="Steph’s Crazy Cooking">
+        <img class="corner-logo corner-logo-right" src="./assets/logo-vlammende-koksmuts.png" alt="Vlammende koksmuts met gekruiste messen">
+      </div>
+      <nav class="main-nav" aria-label="Hoofdnavigatie">
+        <a href="./index.html">Home</a>
+        <a href="./recepten.html">Recepten</a>
+        <a href="./tips.html">Tips &amp; Tricks</a>
+        <a href="./steph.html" aria-current="page">Steph</a>
+      </nav>
+    </header>
+    <main class="portrait-stage">
+      <img src="./assets/steph-portret-transparant.png" alt="Portret van Steph">
+    </main>
+  </div>
+</body>
+</html>
