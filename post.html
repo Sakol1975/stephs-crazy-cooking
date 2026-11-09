@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="blog-post">
+  <a class="blog-back" href="{{ '/blog.html' | relative_url }}">← Terug naar blog</a>
+  <h1>{{ page.title | escape }}</h1>
+  <p class="blog-date">{{ page.date | date: "%d-%m-%Y" }}</p>
+  {% if page.image %}
+    <img class="blog-thumb" src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}">
+  {% endif %}
+  <div class="blog-body">{{ content }}</div>
+</article>

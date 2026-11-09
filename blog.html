@@ -1,0 +1,26 @@
+---
+layout: default
+title: Blog
+permalink: /blog.html
+---
+<div class="blog-content">
+  <h1>De blog van Steph</h1>
+  <p class="blog-intro">Verhalen, kookavonturen en alles wat er in Steph’s keuken gebeurt.</p>
+  {% if site.posts.size > 0 %}
+    <div class="blog-list">
+      {% for post in site.posts %}
+        <article class="blog-card">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}"><img class="blog-thumb" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}"></a>
+          {% endif %}
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+          <p class="blog-date">{{ post.date | date: "%d-%m-%Y" }}</p>
+          <p>{{ post.excerpt | strip_html | truncate: 240 }}</p>
+          <a class="blog-readmore" href="{{ post.url | relative_url }}">Lees verder →</a>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>De eerste blogberichten verschijnen hier binnenkort.</p>
+  {% endif %}
+</div>
