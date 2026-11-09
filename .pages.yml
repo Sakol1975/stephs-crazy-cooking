@@ -1,0 +1,34 @@
+
+media:
+  input: assets/blog
+  output: /assets/blog
+
+content:
+  - name: blog
+    label: Blogberichten
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{fields.title}.md"
+    view:
+      fields:
+        - title
+        - date
+        - image
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+
+      - name: date
+        label: Publicatiedatum
+        type: date
+        required: true
+
+      - name: image
+        label: Foto
+        type: image
+
+      - name: body
+        label: Bericht
+        type: rich-text
