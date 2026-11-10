@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="blog-post">
+  <a class="blog-back" href="{{ '/blog.html' | relative_url }}">← Terug naar blog</a>
+  <h1>{{ page.title | escape }}</h1>
+  <p class="blog-date">{{ page.date | date: "%d-%m-%Y" }}</p>
+  {% if page.image %}
+    <img class="blog-thumb" src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}">
+  {% endif %}
+  <div class="blog-body">{{ content }}</div>
+
+  <div class="steph-like-wrap">
+    <button class="steph-like-button" type="button"
+            data-like-button data-content-type="blog"
+            data-content-id="{{ page.url | slugify }}"
+            aria-pressed="false">
+      <span class="steph-like-heart" data-like-heart aria-hidden="true">♡</span>
+      <span data-like-count>0</span>
+      <span data-like-label>likes</span>
+    </button>
+  </div>
+</article>
+
+<style>
+  .steph-like-wrap { display:flex; justify-content:center; margin:30px 0 12px; }
+  .steph-like-button {
+    display:inline-flex; align-items:center; gap:9px; padding:11px 19px;
+    border:1px solid #b95b2b; border-radius:999px;
+    background:rgba(18,12,9,.92); color:#ffe4c5; font:600 1rem Georgia,serif;
+    cursor:pointer; box-shadow:0 0 14px rgba(255,105,25,.15);
+    transition:background .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  .steph-like-button:hover:not(:disabled) { transform:translateY(-1px); border-color:#ff9a50; }
+  .steph-like-button .steph-like-heart { color:#ff7a32; font-size:1.35rem; line-height:1; }
+  .steph-like-button.is-liked { border-color:#ff7a32; background:rgba(91,35,12,.75); cursor:default; }
+  .steph-like-button.is-loading { opacity:.65; cursor:wait; }
+</style>
+<script src="{{ '/assets/js/likes.js' | relative_url }}" defer></script>
