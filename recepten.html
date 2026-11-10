@@ -137,8 +137,7 @@ permalink: /recepten.html
   </div>
 
   <ul class="recipe-list" id="recipeList">
-    {% assign sorted_recepten = site.recepten | sort_natural: "title" %}
-    {% for recipe in sorted_recepten %}
+    {% assign sorted_recepten = site.recepten | sort: "date" | reverse %}
       <li
         class="recipe-item"
         data-search="{{ recipe.title | downcase | escape }} {{ recipe.search_terms | default: '' | downcase | escape }}">
