@@ -1,8 +1,0 @@
-title: "Steph’s Crazy Cooking"
-description: "Koken op gevoel · Recepten met karakter"
-url: "https://stephscrazycooking.nl"
-baseurl: ""
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
-plugins:
-  - jekyll-feed
