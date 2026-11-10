@@ -1,3 +1,4 @@
+
 ---
 layout: default
 title: Recepten
@@ -112,7 +113,7 @@ permalink: /recepten.html
   }
 </style>
 
-<main class="recipes-content">
+<section class="recipes-content">
   <h1>Recepten</h1>
 
   <div class="tip-search">
@@ -138,6 +139,7 @@ permalink: /recepten.html
 
   <ul class="recipe-list" id="recipeList">
     {% assign sorted_recepten = site.recepten | sort: "date" | reverse %}
+    {% for recipe in sorted_recepten %}
       <li
         class="recipe-item"
         data-search="{{ recipe.title | downcase | escape }} {{ recipe.search_terms | default: '' | downcase | escape }}">
@@ -153,7 +155,7 @@ permalink: /recepten.html
       </li>
     {% endfor %}
   </ul>
-</main>
+</section>
 
 <script>
   (() => {
@@ -202,4 +204,5 @@ permalink: /recepten.html
     input.addEventListener('input', filterRecipes);
   })();
 </script>
+
 
