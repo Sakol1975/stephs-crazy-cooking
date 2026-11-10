@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="nl">
 <head>
@@ -11,22 +12,43 @@
   <div class="site">
     <header class="site-header">
       <div class="brand-row" aria-label="Steph’s Crazy Cooking">
-        <img class="corner-logo corner-logo-left" src="{{ '/assets/logo-vlammende-koksmuts.png' | relative_url }}" alt="Vlammende koksmuts met gekruiste messen">
-        <img class="center-logo" src="{{ '/assets/logo-stephs-crazy-cooking.png' | relative_url }}" alt="Steph’s Crazy Cooking">
-        <img class="corner-logo corner-logo-right" src="{{ '/assets/logo-vlammende-koksmuts.png' | relative_url }}" alt="Vlammende koksmuts met gekruiste messen">
+        <img
+          class="corner-logo corner-logo-left"
+          src="{{ '/assets/logo-vlammende-koksmuts.png' | relative_url }}"
+          alt="Vlammende koksmuts met gekruiste messen">
+
+        <img
+          class="center-logo"
+          src="{{ '/assets/logo-stephs-crazy-cooking.png' | relative_url }}"
+          alt="Steph’s Crazy Cooking">
+
+        <img
+          class="corner-logo corner-logo-right"
+          src="{{ '/assets/logo-vlammende-koksmuts.png' | relative_url }}"
+          alt="Vlammende koksmuts met gekruiste messen">
       </div>
+
       <nav class="main-nav" aria-label="Hoofdnavigatie">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/recepten.html' | relative_url }}">Recepten</a>
-        <a href="{{ '/blog.html' | relative_url }}">Blog</a>
         <a href="{{ '/tips.html' | relative_url }}">Tips &amp; Tricks</a>
+        <a href="{{ '/blog.html' | relative_url }}">Blog</a>
         <a href="{{ '/steph.html' | relative_url }}">Steph</a>
       </nav>
     </header>
-    <main class="page-content">{{ content }}</main>
+
+    <main class="page-content">
+      {{ content }}
+    </main>
+
     <footer style="width:min(100% - 32px, 900px); margin:0 auto; padding:0 12px 18px; text-align:right; font-size:.78rem; line-height:1.4;">
-      <a href="{{ '/disclaimer.html' | relative_url }}" style="color:#fff1e5; opacity:.72; text-decoration:none;">Disclaimer</a>
+      <a
+        href="{{ '/disclaimer.html' | relative_url }}"
+        style="color:#fff1e5; opacity:.72; text-decoration:none;">
+        Disclaimer
+      </a>
     </footer>
   </div>
 </body>
 </html>
+
