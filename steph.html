@@ -5,19 +5,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090605">
+  <meta name="description" content="Hey, ik ben Steph. Welkom in mijn keuken vol recepten, kookgekte en eigenwijze ideeën.">
   <title>Steph | Steph's Crazy Cooking</title>
   <link rel="stylesheet" href="./css/style.css">
 
   <style>
     .steph-intro {
-      width: min(100%, 1050px);
-      margin: clamp(24px, 5vh, 60px) auto 0;
-      padding: 12px 16px;
+      width: min(100% - 32px, 900px);
+      margin: clamp(24px, 5vh, 55px) auto 40px;
+      padding: 24px 22px;
       text-align: center;
+      color: #fff1e5;
+      text-shadow: 0 2px 10px #000, 0 0 16px #000;
     }
 
-    .here-link {
+    .steph-intro h1 {
+      margin: 0 0 24px;
+      color: #ff9a43;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-style: italic;
+      text-shadow: 0 2px 8px #000, 0 0 16px #000;
+    }
+
+    .steph-intro p {
+      margin: 0 auto 18px;
+      max-width: 760px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.8;
+    }
+
+    .steph-signoff {
+      margin-top: 30px !important;
+      color: #ffad62;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem) !important;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .steph-intro .here-link {
       display: inline-block;
+      margin-top: 28px;
       color: #ff8a36;
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(1.25rem, 3vw, 2rem);
@@ -28,10 +57,18 @@
       text-shadow: 0 2px 8px #000, 0 0 14px #000;
     }
 
-    .here-link:hover,
-    .here-link:focus-visible {
+    .steph-intro .here-link:hover,
+    .steph-intro .here-link:focus-visible {
       color: #fff0df;
       text-shadow: 0 0 12px #ff7417, 0 2px 8px #000;
+    }
+
+    .steph-accent {
+      width: 90px;
+      height: 3px;
+      margin: 0 auto 28px;
+      background: #ff7417;
+      box-shadow: 0 0 12px #ff7417;
     }
   </style>
 </head>
@@ -44,7 +81,7 @@
         <img
           class="corner-logo corner-logo-left"
           src="./assets/logo-vlammende-koksmuts.png"
-          alt="Vlammende koksmuts">
+          alt="Vlammende koksmuts met gekruiste messen">
 
         <img
           class="center-logo"
@@ -54,7 +91,7 @@
         <img
           class="corner-logo corner-logo-right"
           src="./assets/logo-vlammende-koksmuts.png"
-          alt="Vlammende koksmuts">
+          alt="Vlammende koksmuts met gekruiste messen">
 
       </div>
 
@@ -70,15 +107,48 @@
     <main class="page-content">
 
       <section class="steph-intro">
+
+        <h1>Hey, ik ben Steph!</h1>
+
+        <div class="steph-accent"></div>
+
+        <p>
+          Af en toe heb ik zo mijn passies...
+          En één daarvan is lekker eten maken.
+          Op allerlei manieren!
+        </p>
+
+        <p>
+          Van BBQ tot oven, van Plancha tot Slowcooker.
+          En uiteraard gebruik ik ook regelmatig gewoon een koekenpan.
+          Je weet wel, zo'n ding waar je ook verrassend lekkere dingen
+          mee kunt maken. 😂
+        </p>
+
+        <p>
+          Om al mijn recepten een beetje te bewaren,
+          besloot ik deze website online te knallen.
+          Lekker makkelijk om alles terug te vinden, toch?
+        </p>
+
+        <p>
+          En het leuke is: iedereen die hier terechtkomt,
+          kan mijn recepten als basis gebruiken.
+          Maar het allerleukste?
+          Er natuurlijk je eigen draai aan geven!
+        </p>
+
+        <p class="steph-signoff">
+          Dus: Lees, Lach, Probeer, Ruik, Proef en Geniet!
+        </p>
+
         <a class="here-link" href="./hierbenik.html">
           Wanna see me?
         </a>
-      </section>
 
-      <!-- Hier komt later jouw persoonlijke verhaal. -->
+      </section>
 
     </main>
   </div>
 </body>
 </html>
-
